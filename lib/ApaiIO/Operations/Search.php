@@ -86,6 +86,22 @@ class Search extends AbstractOperation
     }
 
     /**
+     * Sets the sort value for the search
+     * Allows to browse a sorted resultsets.
+     * (View possible values at http://docs.aws.amazon.com/AWSECommerceService/latest/DG/SortingbyPopularityPriceorCondition.html)
+     * 
+     * @param string $sort
+     *
+     * @return \ApaiIO\Operations\Search
+     */
+    public function setSort($sort)
+    {
+        $this->parameter['Sort'] = $sort;
+
+        return $this;
+    }
+
+    /**
      * Sets the minimum price to a specified value for the search
      * Currency will be given by the site you are querying: EUR for IT, USD for COM
      * Price should be given as integer. 8.99$ USD becomes 899
